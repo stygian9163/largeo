@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  solr:
+    image: solr:9.3
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./solr_data:/var/solr
+    command:
+      - solr-precreate
+      - restaurants
+    networks:
+      - geo_network
+
+  geo_app:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    command: >
+      bash -c "npm install && npm start"
+    depends_on:
+      - solr
+    networks:
+      - geo_network
+
+networks:
+  geo_network:
+    driver: bridge

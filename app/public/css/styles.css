@@ -1,0 +1,65 @@
+/* Custom styles for the Geospatial Search Application */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Map container styling */
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Card styling */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: 500;
+}
+
+/* Results list styling */
+#resultsList .list-group-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#resultsList .list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+.restaurant-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.restaurant-name {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.restaurant-address {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.restaurant-type {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-top: 5px;
+    border-radius: 12px;
+    background-color: #e9ecef;
+    font-size: 0.8rem;
+    color: #495057;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    #map {
+        height: 400px;
+    }
+}
