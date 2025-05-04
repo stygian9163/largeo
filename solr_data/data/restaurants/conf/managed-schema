@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="restaurants" version="1.6">
+  <!-- Unique ID for each restaurant -->
+  <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+  
+  <!-- Basic restaurant info -->
+  <field name="name" type="text_general" indexed="true" stored="true" />
+  <field name="address" type="text_general" indexed="true" stored="true" />
+  <field name="type" type="text_general" indexed="true" stored="true" />
+  <field name="description" type="text_general" indexed="true" stored="true" />
+  
+  <!-- Location data as latitude/longitude coordinates -->
+  <field name="location" type="location_rpt" indexed="true" stored="true" />
+  
+  <!-- Individual latitude and longitude fields for convenience -->
+  <field name="lat" type="tdouble" indexed="true" stored="true" />
+  <field name="lng" type="tdouble" indexed="true" stored="true" />
+  
+  <!-- Required by Solr -->
+  <field name="_version_" type="plong" indexed="false" stored="false" />
+  <field name="_root_" type="string" indexed="true" stored="false" docValues="false" />
+  
+  <!-- Default field for full-text search -->
+  <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
+  
+  <!-- Field to copy all text fields into for full-text search -->
+  <copyField source="name" dest="text"/>
+  <copyField source="address" dest="text"/>
+  <copyField source="type" dest="text"/>
+  <copyField source="description" dest="text"/>
+  
+  <!-- Unique key for document identification -->
+  <uniqueKey>id</uniqueKey>
+  
+  <!-- Field types -->
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
+  <fieldType name="plong" class="solr.LongPointField" docValues="true" />
+  <fieldType name="tdouble" class="solr.DoublePointField" docValues="true" />
+  
+  <!-- Text field with standard processing -->
+  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  
+  <!-- Spatial Recursive Prefix Tree Field for geospatial searches -->
+  <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
+             spatialContextFactory="JTS"
+             geo="true"
+             distErrPct="0.025"
+             maxDistErr="0.001"
+             distanceUnits="kilometers" />
+</schema>

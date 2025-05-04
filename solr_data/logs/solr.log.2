@@ -1,0 +1,413 @@
+2025-05-04 11:06:30.670 INFO  (main) [] o.e.j.s.Server jetty-10.0.15; built: 2023-04-11T17:25:14.480Z; git: 68017dbd00236bb7e187330d7585a059610f661d; jvm 17.0.10+7
+2025-05-04 11:06:30.945 WARN  (main) [] o.e.j.u.DeprecationWarning Using @Deprecated Class org.eclipse.jetty.servlet.listener.ELContextCleaner
+2025-05-04 11:06:30.976 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2025-05-04 11:06:30.986 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.3.0
+2025-05-04 11:06:30.986 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2025-05-04 11:06:30.986 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: /opt/solr-9.3.0
+2025-05-04 11:06:30.986 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2025-05-04T11:06:30.986250463Z
+2025-05-04 11:06:30.990 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr started with "-XX:+CrashOnOutOfMemoryError" that will crash on any OutOfMemoryError exception. The cause of the OOME will be logged in the crash file at the following path: /var/solr/logs/jvm_crash_12.log
+2025-05-04 11:06:31.021 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: /var/solr/data (source: system property: solr.solr.home)
+2025-05-04 11:06:31.044 INFO  (main) [] o.a.s.c.SolrXmlConfig solr.xml not found in SOLR_HOME, using built-in default
+2025-05-04 11:06:31.044 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from /opt/solr-9.3.0/server/solr/solr.xml
+2025-05-04 11:06:31.068 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/opt/solr-9.3.0/lib]
+2025-05-04 11:06:31.747 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2025-05-04 11:06:31.750 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2025-05-04 11:06:31.948 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
+2025-05-04 11:06:31.949 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [restaurants]
+2025-05-04 11:06:31.996 WARN  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrConfig You should not use LATEST as luceneMatchVersion property: if you use this setting, and then Solr upgrades to a newer release of Lucene, sizable changes may happen. If precise back compatibility is important then you should instead explicitly specify an actual Lucene version.
+2025-05-04 11:06:31.996 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.7.0
+2025-05-04 11:06:32.412 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.IndexSchema Schema name=default-config
+2025-05-04 11:06:32.782 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2025-05-04 11:06:32.782 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.CoreContainer Creating SolrCore 'restaurants' using configuration from instancedir /var/solr/data/restaurants, trusted=true
+2025-05-04 11:06:32.806 INFO  (main) [] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2025-05-04 11:06:32.814 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrCore Opening new SolrCore at [/var/solr/data/restaurants], dataDir=[/var/solr/data/restaurants/data/]
+2025-05-04 11:06:32.914 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@46ab18da{solr-jetty-context.xml,/solr,file:///opt/solr-9.3.0/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-9.3.0/server/solr-webapp/webapp}
+2025-05-04 11:06:32.928 INFO  (main) [] o.e.j.s.RequestLogWriter Opened /var/solr/logs/2025_05_04.request.log
+2025-05-04 11:06:32.932 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@40f1be1b{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2025-05-04 11:06:32.933 INFO  (main) [] o.e.j.s.Server Started Server@773cbf4f{STARTING}[10.0.15,sto=0] @3282ms
+2025-05-04 11:06:32.997 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS} status=0 QTime=4
+2025-05-04 11:06:33.191 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2025-05-04 11:06:33.203 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2025-05-04 11:06:33.203 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2025-05-04 11:06:33.221 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2025-05-04 11:06:33.221 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2025-05-04 11:06:33.307 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/restaurants/conf
+2025-05-04 11:06:33.314 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.DirectSolrSpellChecker init: {maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, accuracy=0.5, maxQueryFrequency=0.01, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal}
+2025-05-04 11:06:33.317 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2025-05-04 11:06:33.322 INFO  (searcherExecutor-12-thread-1-processing-restaurants) [ x:restaurants] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2025-05-04 11:06:33.322 INFO  (searcherExecutor-12-thread-1-processing-restaurants) [ x:restaurants] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2025-05-04 11:06:33.325 INFO  (searcherExecutor-12-thread-1-processing-restaurants) [ x:restaurants] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2025-05-04 11:07:26.447 INFO  (qtp1212191909-45) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=2
+2025-05-04 11:07:26.481 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=37
+2025-05-04 11:07:39.532 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=1
+2025-05-04 11:07:39.546 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=14
+2025-05-04 11:07:39.548 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1746356859527&since=0} status=0 QTime=16
+2025-05-04 11:07:43.935 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=1
+2025-05-04 11:07:43.942 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=7
+2025-05-04 11:07:43.959 INFO  (qtp1212191909-20) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/cluster/security/authorization params={wt=json&_=1746356863928} status=0 QTime=2
+2025-05-04 11:07:44.801 INFO  (qtp1212191909-20) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:07:44.802 INFO  (qtp1212191909-21) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/properties params={wt=json&_=1746356864798} status=0 QTime=2
+2025-05-04 11:07:44.814 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=13
+2025-05-04 11:07:45.872 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:07:45.880 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=7
+2025-05-04 11:07:45.894 INFO  (qtp1212191909-45) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1746356846397} status=0 QTime=15
+2025-05-04 11:07:45.905 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:07:45.913 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=8
+2025-05-04 11:07:45.913 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1746356846397} status=0 QTime=8
+2025-05-04 11:09:03.187 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=3
+2025-05-04 11:09:03.211 INFO  (qtp1212191909-21) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=18
+2025-05-04 11:09:03.213 INFO  (qtp1212191909-26) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1746356943175} status=0 QTime=12
+2025-05-04 11:09:03.216 INFO  (qtp1212191909-18) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1746356846397&ts=1746356846397} status=503 QTime=1
+2025-05-04 11:09:03.222 INFO  (qtp1212191909-27) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1746356943176} status=0 QTime=16
+2025-05-04 11:09:03.224 INFO  (qtp1212191909-19) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1746356943176} status=0 QTime=13
+2025-05-04 11:09:06.829 INFO  (qtp1212191909-21) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:06.843 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=14
+2025-05-04 11:09:06.854 INFO  (qtp1212191909-20) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1746356946820} status=0 QTime=19
+2025-05-04 11:09:06.856 INFO  (qtp1212191909-45) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1746356943175} status=0 QTime=25
+2025-05-04 11:09:06.892 INFO  (qtp1212191909-25) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1746356943175} status=0 QTime=14
+2025-05-04 11:09:09.212 INFO  (qtp1212191909-45) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1746356943175} status=0 QTime=0
+2025-05-04 11:09:09.212 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:09.217 INFO  (qtp1212191909-20) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1746356846397&ts=1746356846397} status=503 QTime=0
+2025-05-04 11:09:09.218 INFO  (qtp1212191909-19) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=6
+2025-05-04 11:09:09.224 INFO  (qtp1212191909-25) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1746356943176} status=0 QTime=6
+2025-05-04 11:09:09.230 INFO  (qtp1212191909-18) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1746356943176} status=0 QTime=11
+2025-05-04 11:09:16.070 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:16.078 INFO  (qtp1212191909-45) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=8
+2025-05-04 11:09:16.078 INFO  (qtp1212191909-23) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1746356956066} status=0 QTime=8
+2025-05-04 11:09:16.094 INFO  (qtp1212191909-25) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1746356956066} status=0 QTime=10
+2025-05-04 11:09:21.672 INFO  (qtp1212191909-27) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1746356846397&ts=1746356846397} hits=12 status=0 QTime=37
+2025-05-04 11:09:21.672 INFO  (qtp1212191909-27) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1746356846397&ts=1746356846397} status=0 QTime=37
+2025-05-04 11:09:23.029 INFO  (qtp1212191909-24) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1746356846397&ts=1746356846397} hits=12 status=0 QTime=8
+2025-05-04 11:09:23.029 INFO  (qtp1212191909-24) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={wt=json&_=1746356846397&ts=1746356846397} status=0 QTime=8
+2025-05-04 11:09:24.098 INFO  (qtp1212191909-45) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:24.106 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=8
+2025-05-04 11:09:24.132 INFO  (qtp1212191909-24) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/mbeans params={stats=true&wt=json&_=1746356964095} status=0 QTime=33
+2025-05-04 11:09:25.603 INFO  (qtp1212191909-19) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1746356965573} status=0 QTime=0
+2025-05-04 11:09:25.603 INFO  (qtp1212191909-20) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:25.608 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=4
+2025-05-04 11:09:26.249 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:26.257 INFO  (qtp1212191909-19) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=8
+2025-05-04 11:09:26.263 INFO  (qtp1212191909-23) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1746356943176} status=0 QTime=13
+2025-05-04 11:09:29.025 INFO  (qtp1212191909-27) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=5
+2025-05-04 11:09:29.028 INFO  (qtp1212191909-18) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1746356946820} status=0 QTime=0
+2025-05-04 11:09:29.029 INFO  (qtp1212191909-23) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1746356943175} status=0 QTime=2
+2025-05-04 11:09:29.033 INFO  (qtp1212191909-45) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=6
+2025-05-04 11:09:29.044 INFO  (qtp1212191909-19) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1746356943175} status=0 QTime=1
+2025-05-04 11:09:29.734 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:29.740 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=6
+2025-05-04 11:09:29.749 INFO  (qtp1212191909-23) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/segments params={wt=json&_=1746356969731} status=0 QTime=14
+2025-05-04 11:09:33.096 INFO  (qtp1212191909-20) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:33.096 INFO  (qtp1212191909-19) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1746356943175} status=0 QTime=0
+2025-05-04 11:09:33.102 INFO  (qtp1212191909-24) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1746356846397&ts=1746356846397} status=503 QTime=1
+2025-05-04 11:09:33.107 INFO  (qtp1212191909-18) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=11
+2025-05-04 11:09:33.111 INFO  (qtp1212191909-45) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1746356943176} status=0 QTime=9
+2025-05-04 11:09:33.114 INFO  (qtp1212191909-23) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1746356943176} status=0 QTime=18
+2025-05-04 11:09:38.274 INFO  (qtp1212191909-20) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:09:38.281 INFO  (qtp1212191909-24) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1746356956066} status=0 QTime=6
+2025-05-04 11:09:38.283 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=9
+2025-05-04 11:09:38.295 INFO  (qtp1212191909-18) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1746356956066} status=0 QTime=5
+2025-05-04 11:09:45.028 INFO  (qtp1212191909-23) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=2
+2025-05-04 11:09:45.181 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=156
+2025-05-04 11:09:45.187 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/threads params={wt=json&_=1746356985017} status=0 QTime=161
+2025-05-04 11:09:46.517 INFO  (qtp1212191909-19) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=1
+2025-05-04 11:09:46.525 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=10
+2025-05-04 11:10:15.000 ERROR (qtp1212191909-26) [ x:restaurants] o.a.s.h.RequestHandlerBase Client exception => org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196)
+org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:61) ~[?:?]
+	at org.apache.solr.search.QParser.getSortSpec(QParser.java:294) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:199) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:389) ~[?:?]
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2893) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:871) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:567) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.15.jar:10.0.15]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: org.apache.solr.search.SyntaxError: Spatial field must implement MultiValueSource or extend AbstractSpatialFieldType:location{type=text_general,properties=indexed,tokenized,stored,multiValued,useDocValuesAsStored,uninvertible}
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.getMultiValueSource(GeoDistValueSourceParser.java:238) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.transformFieldSources(GeoDistValueSourceParser.java:165) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.parse(GeoDistValueSourceParser.java:60) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parseValueSource(FunctionQParser.java:485) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parse(FunctionQParser.java:100) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:123) ~[?:?]
+	... 55 more
+2025-05-04 11:10:15.000 INFO  (qtp1212191909-26) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} status=400 QTime=30
+2025-05-04 11:10:17.196 ERROR (qtp1212191909-19) [ x:restaurants] o.a.s.h.RequestHandlerBase Client exception => org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196)
+org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:61) ~[?:?]
+	at org.apache.solr.search.QParser.getSortSpec(QParser.java:294) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:199) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:389) ~[?:?]
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2893) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:871) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:567) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.15.jar:10.0.15]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: org.apache.solr.search.SyntaxError: Spatial field must implement MultiValueSource or extend AbstractSpatialFieldType:location{type=text_general,properties=indexed,tokenized,stored,multiValued,useDocValuesAsStored,uninvertible}
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.getMultiValueSource(GeoDistValueSourceParser.java:238) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.transformFieldSources(GeoDistValueSourceParser.java:165) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.parse(GeoDistValueSourceParser.java:60) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parseValueSource(FunctionQParser.java:485) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parse(FunctionQParser.java:100) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:123) ~[?:?]
+	... 55 more
+2025-05-04 11:10:17.197 INFO  (qtp1212191909-19) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} status=400 QTime=1
+2025-05-04 11:10:20.607 ERROR (qtp1212191909-45) [ x:restaurants] o.a.s.h.RequestHandlerBase Client exception => org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196)
+org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:61) ~[?:?]
+	at org.apache.solr.search.QParser.getSortSpec(QParser.java:294) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:199) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:389) ~[?:?]
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2893) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:871) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:567) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.15.jar:10.0.15]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: org.apache.solr.search.SyntaxError: Spatial field must implement MultiValueSource or extend AbstractSpatialFieldType:location{type=text_general,properties=indexed,tokenized,stored,multiValued,useDocValuesAsStored,uninvertible}
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.getMultiValueSource(GeoDistValueSourceParser.java:238) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.transformFieldSources(GeoDistValueSourceParser.java:165) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.parse(GeoDistValueSourceParser.java:60) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parseValueSource(FunctionQParser.java:485) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parse(FunctionQParser.java:100) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:123) ~[?:?]
+	... 55 more
+2025-05-04 11:10:20.607 INFO  (qtp1212191909-45) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} status=400 QTime=1
+2025-05-04 11:10:52.012 ERROR (qtp1212191909-23) [ x:restaurants] o.a.s.h.RequestHandlerBase Client exception => org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196)
+org.apache.solr.common.SolrException: sort param could not be parsed as a query, and is not a field that exists in the index: geodist(location,40.7128,-74.006)
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:196) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:61) ~[?:?]
+	at org.apache.solr.search.QParser.getSortSpec(QParser.java:294) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:199) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:389) ~[?:?]
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2893) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:871) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:567) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:140) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.15.jar:10.0.15]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.15.jar:10.0.15]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: org.apache.solr.search.SyntaxError: Spatial field must implement MultiValueSource or extend AbstractSpatialFieldType:location{type=text_general,properties=indexed,tokenized,stored,multiValued,useDocValuesAsStored,uninvertible}
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.getMultiValueSource(GeoDistValueSourceParser.java:238) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.transformFieldSources(GeoDistValueSourceParser.java:165) ~[?:?]
+	at org.apache.solr.search.function.distance.GeoDistValueSourceParser.parse(GeoDistValueSourceParser.java:60) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parseValueSource(FunctionQParser.java:485) ~[?:?]
+	at org.apache.solr.search.FunctionQParser.parse(FunctionQParser.java:100) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:123) ~[?:?]
+	... 55 more
+2025-05-04 11:10:52.012 INFO  (qtp1212191909-23) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} status=400 QTime=9
+2025-05-04 11:13:58.800 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746357238766} status=0 QTime=2
+2025-05-04 11:13:58.837 INFO  (qtp1212191909-19) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746357238766} status=0 QTime=30
+2025-05-04 11:14:03.915 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=0
+2025-05-04 11:14:03.929 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=15
+2025-05-04 11:14:04.108 INFO  (qtp1212191909-45) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/threads params={wt=json&_=1746356985017} status=0 QTime=174
+2025-05-04 11:14:05.603 INFO  (qtp1212191909-19) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746356846397} status=0 QTime=1
+2025-05-04 11:14:05.615 INFO  (qtp1212191909-48) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746356846397} status=0 QTime=14
+2025-05-04 11:18:37.359 INFO  (qtp1212191909-23) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746357517326} status=0 QTime=5
+2025-05-04 11:18:37.377 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746357517326} status=0 QTime=13
+2025-05-04 11:18:38.351 INFO  (qtp1212191909-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1746357518330} status=0 QTime=0
+2025-05-04 11:18:38.359 INFO  (qtp1212191909-27) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1746357518330} status=0 QTime=8
+2025-05-04 11:22:06.309 INFO  (qtp1212191909-26) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=javabin&version=2} status=0 QTime=4
+2025-05-04 11:22:51.608 INFO  (qtp1212191909-25) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=javabin&version=2} status=0 QTime=7
+2025-05-04 11:22:51.631 INFO  (qtp1212191909-48) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=restaurants&action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=8
+2025-05-04 11:24:07.933 INFO  (JettyShutdownThread) [] o.e.j.s.Server Stopped Server@773cbf4f{STOPPING}[10.0.15,sto=0]
+2025-05-04 11:24:07.941 INFO  (JettyShutdownThread) [] o.e.j.s.AbstractConnector Stopped ServerConnector@40f1be1b{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2025-05-04 11:24:07.972 INFO  (JettyShutdownThread) [] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1929218620
+2025-05-04 11:24:07.977 INFO  (coreCloseExecutor-18-thread-1) [ x:restaurants] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@21c8908b restaurants
+2025-05-04 11:24:07.978 INFO  (coreCloseExecutor-18-thread-1) [ x:restaurants] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.restaurants tag=SolrCore@21c8908b
+2025-05-04 11:24:08.000 INFO  (coreCloseExecutor-18-thread-1) [ x:restaurants] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2025-05-04 11:24:08.017 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2025-05-04 11:24:08.022 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2025-05-04 11:24:08.027 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2025-05-04 11:24:08.035 INFO  (JettyShutdownThread) [] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@46ab18da{solr-jetty-context.xml,/solr,null,STOPPED}{/opt/solr-9.3.0/server/solr-webapp/webapp}
