@@ -7,6 +7,9 @@ services:
       - "8983:8983"
     volumes:
       - ./solr_data:/var/solr
+      - ./libs/jts-core-1.19.0.jar:/opt/solr/server/solr-webapp/webapp/WEB-INF/lib/jts-core-1.19.0.jar
+      - ./libs:/opt/solr/server/solr/lib
+
     command:
       - solr-precreate
       - restaurants

@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+
+# debugging logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# production build output
+dist/
+build/
+
+# coverage reports
+coverage/
+
+# Next.js build directory
+.next/
+out/
+
+# log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor directories
+.vscode/
+.idea/
+
+# lockfiles (if you want to enforce one package manager)
+# Uncomment the one you use:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

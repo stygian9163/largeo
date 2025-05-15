@@ -6,6 +6,53 @@ let searchCircle;      // Circle showing search radius
 let markers = [];      // Array to hold restaurant markers
 const DEFAULT_ZOOM = 13;
 const API_URL = '/api/search';
+// Remove all restaurant markers from the map and reset the markers array
+function clearMarkers() {
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+}
+
+// When the user clicks on a result in the sidebar, find the matching marker and open its popup
+function handleResultClick(e) {
+    // assume each <li> in #resultsList has data-id="{{restaurant.id}}"
+    const li = e.target.closest('li[data-id]');
+    if (!li) return;
+    const id = li.getAttribute('data-id');
+    const marker = markers.find(m => m._id === id);
+    if (marker) {
+        marker.openPopup();
+        map.setView(marker.getLatLng(), DEFAULT_ZOOM);
+    }
+}
+
+// Update the sidebar list with the new search results
+function updateResultsList(results) {
+    const resultsList = document.getElementById('resultsList');
+    const resultsCount = document.getElementById('resultsCount');
+
+    // Clear out any old results
+    resultsList.innerHTML = '';
+
+    // Show count
+    const count = results.docs.length;
+    resultsCount.textContent = count
+        ? `${count} restaurant${count>1?'s':''} found`
+        : 'No restaurants found';
+
+    // Build a <li> for each restaurant
+    results.docs.forEach(rest => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        // IMPORTANT: data-id must match marker._id
+        li.setAttribute('data-id', rest.id);
+        li.innerHTML = `
+      <strong>${rest.name}</strong><br>
+      <small>${rest.address}</small>
+    `;
+        resultsList.appendChild(li);
+    });
+}
+
 
 // Initialize the map when the page loads
 document.addEventListener('DOMContentLoaded', () => {

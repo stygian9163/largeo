@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Solr managed schema - automatically generated - DO NOT EDIT -->
 <schema name="default-config" version="1.6">
+  <fieldType name="booleans" class="solr.BoolField" multiValued="true" sortMissingLast="true"/>
+
   <uniqueKey>id</uniqueKey>
   <fieldType name="_nest_path_" class="solr.NestPathField" omitTermFreqAndPositions="true" omitNorms="true" maxCharsForDocValues="-1" stored="false" multiValued="false"/>
   <fieldType name="ancestor_path" class="solr.TextField">
