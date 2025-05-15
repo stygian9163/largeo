@@ -1,393 +1,281 @@
-2025-05-15 18:30:13.833 INFO  (main) [] o.e.j.s.Server jetty-10.0.15; built: 2023-04-11T17:25:14.480Z; git: 68017dbd00236bb7e187330d7585a059610f661d; jvm 17.0.10+7
-2025-05-15 18:30:14.470 WARN  (main) [] o.e.j.u.DeprecationWarning Using @Deprecated Class org.eclipse.jetty.servlet.listener.ELContextCleaner
-2025-05-15 18:30:14.524 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2025-05-15 18:30:14.539 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.3.0
-2025-05-15 18:30:14.539 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
-2025-05-15 18:30:14.539 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: /opt/solr-9.3.0
-2025-05-15 18:30:14.539 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2025-05-15T18:30:14.539956089Z
-2025-05-15 18:30:14.546 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr started with "-XX:+CrashOnOutOfMemoryError" that will crash on any OutOfMemoryError exception. The cause of the OOME will be logged in the crash file at the following path: /var/solr/logs/jvm_crash_12.log
-2025-05-15 18:30:14.594 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: /var/solr/data (source: system property: solr.solr.home)
-2025-05-15 18:30:14.623 INFO  (main) [] o.a.s.c.SolrXmlConfig solr.xml not found in SOLR_HOME, using built-in default
-2025-05-15 18:30:14.624 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from /opt/solr-9.3.0/server/solr/solr.xml
-2025-05-15 18:30:14.696 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/opt/solr-9.3.0/lib]
-2025-05-15 18:30:16.802 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
-2025-05-15 18:30:16.807 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2025-05-15 18:30:17.339 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
-2025-05-15 18:30:17.340 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [restaurants]
-2025-05-15 18:30:17.453 WARN  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrConfig You should not use LATEST as luceneMatchVersion property: if you use this setting, and then Solr upgrades to a newer release of Lucene, sizable changes may happen. If precise back compatibility is important then you should instead explicitly specify an actual Lucene version.
-2025-05-15 18:30:17.453 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.7.0
-2025-05-15 18:30:17.621 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.IndexSchema Schema name=restaurants
-2025-05-15 18:30:17.658 ERROR (coreContainerWorkExecutor-2-thread-1) [] o.a.s.c.CoreContainer Error waiting for SolrCore to be loaded on startup => java.util.concurrent.ExecutionException: org.apache.solr.common.SolrException: Unable to create core [restaurants]
-	at java.base/java.util.concurrent.FutureTask.report(Unknown Source)
-java.util.concurrent.ExecutionException: org.apache.solr.common.SolrException: Unable to create core [restaurants]
-	at java.util.concurrent.FutureTask.report(Unknown Source) ~[?:?]
-	at java.util.concurrent.FutureTask.get(Unknown Source) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$13(CoreContainer.java:1046) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedRunnable.run(InstrumentedExecutorService.java:212) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:?]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	at java.lang.Thread.run(Unknown Source) [?:?]
-Caused by: org.apache.solr.common.SolrException: Unable to create core [restaurants]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1701) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	... 5 more
-Caused by: org.apache.solr.common.SolrException: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:278) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	... 5 more
-Caused by: org.apache.solr.common.SolrException: Error loading parsing schema
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:289) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	... 5 more
-Caused by: org.apache.solr.common.SolrException: Can't load schema /var/solr/data/restaurants/conf/managed-schema: Unknown fieldType 'booleans' specified on field *_bs
-	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:658) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:187) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchema.<init>(ManagedIndexSchema.java:120) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:287) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	... 5 more
-Caused by: org.apache.solr.common.SolrException: Unknown fieldType 'booleans' specified on field *_bs
-	at org.apache.solr.schema.IndexSchema.loadFields(IndexSchema.java:707) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:535) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:187) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchema.<init>(ManagedIndexSchema.java:120) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:287) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	... 5 more
-2025-05-15 18:30:18.411 INFO  (main) [] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
-2025-05-15 18:30:18.698 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@1a2e2935{solr-jetty-context.xml,/solr,file:///opt/solr-9.3.0/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-9.3.0/server/solr-webapp/webapp}
-2025-05-15 18:30:18.717 INFO  (main) [] o.e.j.s.RequestLogWriter Opened /var/solr/logs/2025_05_15.request.log
-2025-05-15 18:30:18.725 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@6b9ce1bf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2025-05-15 18:30:18.728 INFO  (main) [] o.e.j.s.Server Started Server@2756c0a7{STARTING}[10.0.15,sto=0] @7197ms
-2025-05-15 18:30:18.892 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS} status=0 QTime=50
-2025-05-15 18:30:18.952 ERROR (qtp240630125-28) [] o.a.s.s.HttpSolrCall 500 Exception => org.apache.solr.core.SolrCoreInitializationException: SolrCore 'restaurants' is not available due to init failure: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:2232)
-org.apache.solr.core.SolrCoreInitializationException: SolrCore 'restaurants' is not available due to init failure: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:2232) ~[?:?]
-	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:2202) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.init(HttpSolrCall.java:263) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:515) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
-	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:194) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.15.jar:10.0.15]
-	at java.lang.Thread.run(Unknown Source) [?:?]
-Caused by: org.apache.solr.common.SolrException: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:278) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-Caused by: org.apache.solr.common.SolrException: Error loading parsing schema
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:289) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-Caused by: org.apache.solr.common.SolrException: Can't load schema /var/solr/data/restaurants/conf/managed-schema: Unknown fieldType 'booleans' specified on field *_bs
-	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:658) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:187) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchema.<init>(ManagedIndexSchema.java:120) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:287) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-Caused by: org.apache.solr.common.SolrException: Unknown fieldType 'booleans' specified on field *_bs
-	at org.apache.solr.schema.IndexSchema.loadFields(IndexSchema.java:707) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:535) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:187) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchema.<init>(ManagedIndexSchema.java:120) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:287) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-2025-05-15 18:30:19.251 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333662066&since=0} status=0 QTime=11
-2025-05-15 18:30:20.377 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333820338} status=0 QTime=0
-2025-05-15 18:30:20.390 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333820367&since=0} status=0 QTime=0
-2025-05-15 18:30:20.401 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333820339} status=0 QTime=24
-2025-05-15 18:30:21.850 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333821814} status=0 QTime=0
-2025-05-15 18:30:21.850 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333821839&since=0} status=0 QTime=0
-2025-05-15 18:30:21.865 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333821814} status=0 QTime=15
-2025-05-15 18:30:22.338 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333822289} status=0 QTime=0
-2025-05-15 18:30:22.338 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333822328&since=0} status=0 QTime=0
-2025-05-15 18:30:22.357 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333822290} status=0 QTime=19
-2025-05-15 18:30:22.521 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333822477} status=0 QTime=0
-2025-05-15 18:30:22.523 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333822512&since=0} status=0 QTime=0
-2025-05-15 18:30:22.536 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333822478} status=0 QTime=14
-2025-05-15 18:30:22.706 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333822650} status=0 QTime=0
-2025-05-15 18:30:22.707 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333822699&since=0} status=0 QTime=0
-2025-05-15 18:30:22.721 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333822650} status=0 QTime=15
-2025-05-15 18:30:22.879 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333822843} status=0 QTime=0
-2025-05-15 18:30:22.879 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333822870&since=0} status=0 QTime=0
-2025-05-15 18:30:22.895 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333822843} status=0 QTime=17
-2025-05-15 18:30:23.054 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333823020} status=0 QTime=0
-2025-05-15 18:30:23.057 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333823044&since=0} status=0 QTime=1
-2025-05-15 18:30:23.069 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333823020} status=0 QTime=12
-2025-05-15 18:30:23.242 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333823192} status=0 QTime=0
-2025-05-15 18:30:23.243 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333823234&since=0} status=0 QTime=1
-2025-05-15 18:30:23.270 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333823192} status=0 QTime=28
-2025-05-15 18:30:23.406 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333823370} status=0 QTime=0
-2025-05-15 18:30:23.407 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333823398&since=0} status=0 QTime=0
-2025-05-15 18:30:23.426 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333823371} status=0 QTime=18
-2025-05-15 18:30:23.600 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333823565} status=0 QTime=0
-2025-05-15 18:30:23.601 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333823589&since=0} status=0 QTime=0
-2025-05-15 18:30:23.613 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333823566} status=0 QTime=13
-2025-05-15 18:30:23.776 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333823741} status=0 QTime=0
-2025-05-15 18:30:23.780 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333823766&since=0} status=0 QTime=1
-2025-05-15 18:30:23.790 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333823742} status=0 QTime=14
-2025-05-15 18:30:23.957 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333823913} status=0 QTime=0
-2025-05-15 18:30:23.957 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333823947&since=0} status=0 QTime=0
-2025-05-15 18:30:23.968 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333823913} status=0 QTime=11
-2025-05-15 18:30:24.179 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333824131} status=0 QTime=0
-2025-05-15 18:30:24.180 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333824169&since=0} status=0 QTime=1
-2025-05-15 18:30:24.193 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333824132} status=0 QTime=14
-2025-05-15 18:30:24.371 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333824335} status=0 QTime=0
-2025-05-15 18:30:24.371 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333824363&since=0} status=0 QTime=0
-2025-05-15 18:30:24.382 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333824336} status=0 QTime=12
-2025-05-15 18:30:24.544 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333824502} status=0 QTime=0
-2025-05-15 18:30:24.547 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333824535&since=0} status=0 QTime=1
-2025-05-15 18:30:24.561 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333824502} status=0 QTime=17
-2025-05-15 18:30:24.717 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333824684} status=0 QTime=0
-2025-05-15 18:30:24.718 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333824706&since=0} status=0 QTime=0
-2025-05-15 18:30:24.729 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333824684} status=0 QTime=12
-2025-05-15 18:30:28.276 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333828236} status=0 QTime=0
-2025-05-15 18:30:28.278 INFO  (qtp240630125-51) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828266&since=0} status=0 QTime=0
-2025-05-15 18:30:28.289 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333828237} status=0 QTime=12
-2025-05-15 18:30:28.772 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333828734} status=0 QTime=0
-2025-05-15 18:30:28.772 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828763&since=0} status=0 QTime=0
-2025-05-15 18:30:28.785 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333828734} status=0 QTime=13
-2025-05-15 18:30:29.006 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747333828964} status=0 QTime=0
-2025-05-15 18:30:29.008 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:30:29.018 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747333828964} status=0 QTime=11
-2025-05-15 18:30:39.204 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=2
-2025-05-15 18:30:47.380 ERROR (qtp240630125-32) [] o.a.s.s.HttpSolrCall 500 Exception => org.apache.solr.core.SolrCoreInitializationException: SolrCore 'restaurants' is not available due to init failure: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:2232)
-org.apache.solr.core.SolrCoreInitializationException: SolrCore 'restaurants' is not available due to init failure: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:2232) ~[?:?]
-	at org.apache.solr.core.CoreContainer.getCore(CoreContainer.java:2202) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.init(HttpSolrCall.java:263) ~[?:?]
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:515) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
-	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
-	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:578) ~[jetty-security-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1570) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1543) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:505) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:762) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:497) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282) ~[jetty-server-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:416) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:385) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:272) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:194) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.15.jar:10.0.15]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.15.jar:10.0.15]
-	at java.lang.Thread.run(Unknown Source) [?:?]
-Caused by: org.apache.solr.common.SolrException: Could not load conf for core restaurants: Error loading parsing schema
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:278) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-Caused by: org.apache.solr.common.SolrException: Error loading parsing schema
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:289) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-Caused by: org.apache.solr.common.SolrException: Can't load schema /var/solr/data/restaurants/conf/managed-schema: Unknown fieldType 'booleans' specified on field *_bs
-	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:658) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:187) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchema.<init>(ManagedIndexSchema.java:120) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:287) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-Caused by: org.apache.solr.common.SolrException: Unknown fieldType 'booleans' specified on field *_bs
-	at org.apache.solr.schema.IndexSchema.loadFields(IndexSchema.java:707) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:535) ~[?:?]
-	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:187) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchema.<init>(ManagedIndexSchema.java:120) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:287) ~[?:?]
-	at org.apache.solr.schema.ManagedIndexSchemaFactory.create(ManagedIndexSchemaFactory.java:54) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.createIndexSchema(ConfigSetService.java:357) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.lambda$loadConfigSet$0(ConfigSetService.java:268) ~[?:?]
-	at org.apache.solr.core.ConfigSet.<init>(ConfigSet.java:49) ~[?:?]
-	at org.apache.solr.core.ConfigSetService.loadConfigSet(ConfigSetService.java:264) ~[?:?]
-	at org.apache.solr.core.CoreContainer.createFromDescriptor(CoreContainer.java:1658) ~[?:?]
-	at org.apache.solr.core.CoreContainer.lambda$loadInternal$12(CoreContainer.java:1017) ~[?:?]
-	at com.codahale.metrics.InstrumentedExecutorService$InstrumentedCallable.call(InstrumentedExecutorService.java:234) ~[metrics-core-4.2.19.jar:4.2.19]
-	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
-	at org.apache.solr.common.util.ExecutorUtil$MDCAwareThreadPoolExecutor.lambda$execute$0(ExecutorUtil.java:289) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
-	... 1 more
-2025-05-15 18:30:50.192 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:31:01.183 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:31:12.183 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:31:23.180 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:31:34.183 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:31:45.190 INFO  (qtp240630125-49) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=1
-2025-05-15 18:32:41.192 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=1
-2025-05-15 18:33:41.206 INFO  (qtp240630125-33) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747333828999&since=0} status=0 QTime=0
-2025-05-15 18:34:40.266 INFO  (JettyShutdownThread) [] o.e.j.s.Server Stopped Server@2756c0a7{STOPPING}[10.0.15,sto=0]
-2025-05-15 18:34:40.278 INFO  (JettyShutdownThread) [] o.e.j.s.AbstractConnector Stopped ServerConnector@6b9ce1bf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2025-05-15 18:34:40.304 INFO  (JettyShutdownThread) [] o.a.s.c.CoreContainer Shutting down CoreContainer instance=778330045
-2025-05-15 18:34:40.309 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2025-05-15 18:34:40.330 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2025-05-15 18:34:40.343 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2025-05-15 18:34:40.360 INFO  (JettyShutdownThread) [] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@1a2e2935{solr-jetty-context.xml,/solr,null,STOPPED}{/opt/solr-9.3.0/server/solr-webapp/webapp}
+2025-05-15 18:52:15.890 INFO  (main) [] o.e.j.s.Server jetty-10.0.15; built: 2023-04-11T17:25:14.480Z; git: 68017dbd00236bb7e187330d7585a059610f661d; jvm 17.0.10+7
+2025-05-15 18:52:16.728 WARN  (main) [] o.e.j.u.DeprecationWarning Using @Deprecated Class org.eclipse.jetty.servlet.listener.ELContextCleaner
+2025-05-15 18:52:16.780 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2025-05-15 18:52:16.792 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.3.0
+2025-05-15 18:52:16.793 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2025-05-15 18:52:16.793 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: /opt/solr-9.3.0
+2025-05-15 18:52:16.793 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2025-05-15T18:52:16.793822395Z
+2025-05-15 18:52:16.801 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr started with "-XX:+CrashOnOutOfMemoryError" that will crash on any OutOfMemoryError exception. The cause of the OOME will be logged in the crash file at the following path: /var/solr/logs/jvm_crash_12.log
+2025-05-15 18:52:16.846 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: /var/solr/data (source: system property: solr.solr.home)
+2025-05-15 18:52:16.890 INFO  (main) [] o.a.s.c.SolrXmlConfig solr.xml not found in SOLR_HOME, using built-in default
+2025-05-15 18:52:16.890 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from /opt/solr-9.3.0/server/solr/solr.xml
+2025-05-15 18:52:16.979 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/opt/solr-9.3.0/lib]
+2025-05-15 18:52:19.213 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2025-05-15 18:52:19.217 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2025-05-15 18:52:19.688 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
+2025-05-15 18:52:19.690 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [restaurants]
+2025-05-15 18:52:19.794 WARN  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrConfig You should not use LATEST as luceneMatchVersion property: if you use this setting, and then Solr upgrades to a newer release of Lucene, sizable changes may happen. If precise back compatibility is important then you should instead explicitly specify an actual Lucene version.
+2025-05-15 18:52:19.795 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.7.0
+2025-05-15 18:52:19.989 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.IndexSchema Schema name=restaurants
+2025-05-15 18:52:20.174 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.IndexSchema Loaded schema restaurants/1.6 with uniqueid field id
+2025-05-15 18:52:20.202 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.CoreContainer Creating SolrCore 'restaurants' using configuration from instancedir /var/solr/data/restaurants, trusted=true
+2025-05-15 18:52:20.278 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.c.SolrCore Opening new SolrCore at [/var/solr/data/restaurants], dataDir=[/var/solr/data/restaurants/data/]
+2025-05-15 18:52:20.669 INFO  (main) [] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2025-05-15 18:52:20.946 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@1a2e2935{solr-jetty-context.xml,/solr,file:///opt/solr-9.3.0/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-9.3.0/server/solr-webapp/webapp}
+2025-05-15 18:52:20.968 INFO  (main) [] o.e.j.s.RequestLogWriter Opened /var/solr/logs/2025_05_15.request.log
+2025-05-15 18:52:20.977 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@6b9ce1bf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2025-05-15 18:52:20.981 INFO  (main) [] o.e.j.s.Server Started Server@2756c0a7{STARTING}[10.0.15,sto=0] @8113ms
+2025-05-15 18:52:21.110 INFO  (qtp240630125-52) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS} status=0 QTime=10
+2025-05-15 18:52:21.487 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2025-05-15 18:52:21.530 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2025-05-15 18:52:21.530 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2025-05-15 18:52:21.664 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2025-05-15 18:52:21.664 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2025-05-15 18:52:22.136 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/restaurants/conf
+2025-05-15 18:52:22.162 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.s.DirectSolrSpellChecker init: {name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, accuracy=0.5, maxQueryFrequency=0.01}
+2025-05-15 18:52:22.176 INFO  (coreLoadExecutor-10-thread-1) [ x:restaurants] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2025-05-15 18:52:22.213 INFO  (searcherExecutor-12-thread-1-processing-restaurants) [ x:restaurants] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2025-05-15 18:52:22.213 INFO  (searcherExecutor-12-thread-1-processing-restaurants) [ x:restaurants] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2025-05-15 18:52:22.226 INFO  (searcherExecutor-12-thread-1-processing-restaurants) [ x:restaurants] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2025-05-15 18:52:25.788 INFO  (qtp240630125-29) [ x:restaurants] o.a.s.s.AbstractSpatialPrefixTreeFieldType location_rpt{class=org.apache.solr.schema.SpatialRecursivePrefixTreeFieldType,analyzer=org.apache.solr.schema.FieldType$DefaultAnalyzer,args={geo=true, maxDistErr=0.001, spatialContextFactory=JTS, distErrPct=0.025, distanceUnits=kilometers, class=solr.SpatialRecursivePrefixTreeFieldType}} strat: RecursivePrefixTreeStrategy(SPG:(GeohashPrefixTree(maxLevels:11,ctx:JtsSpatialContext{geo=true, calculator=Haversine, worldBounds=Rect(minX=-180.0,maxX=180.0,minY=-90.0,maxY=90.0)})),pruneLeafyBranches) maxLevels: 11
+2025-05-15 18:52:25.873 INFO  (qtp240630125-29) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=126
+2025-05-15 18:52:27.334 INFO  (qtp240630125-30) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=5
+2025-05-15 18:52:29.350 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747334747434&since=0} status=0 QTime=7
+2025-05-15 18:52:30.695 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 18:52:30.710 INFO  (qtp240630125-33) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:52:30.722 INFO  (qtp240630125-32) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=24
+2025-05-15 18:52:37.886 INFO  (qtp240630125-26) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=2
+2025-05-15 18:52:38.644 INFO  (qtp240630125-50) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D5}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=2
+2025-05-15 18:52:41.196 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:52:52.185 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:53:03.194 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:53:14.183 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:53:25.184 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:53:36.185 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:54:41.208 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:55:41.209 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:56:41.210 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:57:18.555 INFO  (qtp240630125-27) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=6
+2025-05-15 18:57:20.493 INFO  (qtp240630125-52) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=2
+2025-05-15 18:57:21.162 INFO  (qtp240630125-28) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=1
+2025-05-15 18:57:21.372 INFO  (qtp240630125-31) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=2
+2025-05-15 18:57:21.565 INFO  (qtp240630125-29) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=1
+2025-05-15 18:57:21.747 INFO  (qtp240630125-53) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=1
+2025-05-15 18:57:21.934 INFO  (qtp240630125-33) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=1
+2025-05-15 18:57:23.519 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:57:33.522 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:57:43.523 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:57:53.533 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:58:03.550 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:58:13.553 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:58:23.566 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:58:33.569 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:58:43.574 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:58:53.582 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:59:03.592 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:59:13.605 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:59:23.611 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:59:33.613 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 18:59:43.628 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 18:59:53.637 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:00:03.654 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:00:13.673 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:00:23.681 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:00:33.686 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:00:43.701 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:00:53.715 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:01:03.730 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:01:13.735 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:01:23.736 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:01:33.747 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:01:43.750 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:01:53.758 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:02:03.764 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:02:13.773 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:02:23.778 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:02:33.783 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:02:43.803 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:02:53.811 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:03:03.812 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:03:13.817 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:03:23.822 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:03:33.822 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:03:43.835 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:03:53.841 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:04:03.853 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:04:13.857 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:04:23.867 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:04:33.877 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:04:43.890 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:04:53.894 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:05:03.905 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:05:13.909 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:05:23.920 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:05:33.928 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:05:43.933 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:05:53.946 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:06:03.962 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:06:13.976 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:06:23.979 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:06:33.984 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:06:43.988 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:06:53.994 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:07:04.004 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:07:14.015 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:07:24.020 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:07:34.018 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:07:44.034 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:07:54.041 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:08:04.052 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:08:14.063 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:08:24.075 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:08:34.079 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:08:44.095 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:08:54.103 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:09:04.118 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:09:14.128 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:09:24.140 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:09:34.147 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:09:44.151 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:09:54.160 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:10:04.164 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:10:14.177 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:10:24.190 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:10:34.201 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:10:44.207 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:10:54.218 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:11:04.232 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:11:14.240 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:11:24.255 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:11:34.260 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:11:44.274 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:11:54.280 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:12:04.286 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:12:14.289 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:12:24.298 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:12:34.310 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:12:44.313 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:12:54.327 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:13:04.337 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:13:14.336 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:13:24.352 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:13:34.363 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:13:44.378 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:13:54.388 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:14:04.390 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:14:14.396 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:14:24.406 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:14:34.411 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:14:44.422 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:14:54.425 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:15:04.430 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:15:14.438 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:15:24.441 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:15:34.454 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:15:44.462 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:15:54.472 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:16:04.477 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:16:14.487 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:16:24.489 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:16:34.503 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:16:44.522 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=4
+2025-05-15 19:16:54.527 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:17:04.541 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:17:14.556 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:17:24.562 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:17:34.568 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:17:44.568 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:17:54.574 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:18:04.586 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:18:14.599 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:18:24.610 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:18:34.621 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:18:44.626 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:18:54.641 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:19:04.648 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:19:14.663 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:19:24.675 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:19:34.684 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:19:44.687 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:19:54.700 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:20:04.709 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:20:14.717 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:20:24.734 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:20:34.746 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:20:44.756 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:20:54.762 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:21:04.769 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:21:14.776 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:21:24.779 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:21:34.792 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:21:45.181 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:21:45.830 INFO  (qtp240630125-27) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=2
+2025-05-15 19:21:49.904 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:21:49.946 INFO  (qtp240630125-52) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=43
+2025-05-15 19:21:49.974 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1747335150659} status=0 QTime=93
+2025-05-15 19:21:50.001 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:21:50.043 INFO  (qtp240630125-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=40
+2025-05-15 19:21:50.072 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1747335150659} status=0 QTime=70
+2025-05-15 19:22:00.867 INFO  (qtp240630125-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:22:00.905 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=34
+2025-05-15 19:22:00.935 INFO  (qtp240630125-52) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=25
+2025-05-15 19:22:03.167 INFO  (qtp240630125-29) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:22:03.168 INFO  (qtp240630125-28) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:22:03.197 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=31
+2025-05-15 19:22:13.186 INFO  (qtp240630125-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:22:24.184 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:22:35.183 INFO  (qtp240630125-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:22:46.190 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:22:57.190 INFO  (qtp240630125-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:23:08.185 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:23:41.198 INFO  (qtp240630125-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:24:41.198 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:25:41.198 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:26:41.198 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=1
+2025-05-15 19:27:36.612 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1747335150686&since=0} status=0 QTime=0
+2025-05-15 19:27:40.449 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:27:40.510 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=39
+2025-05-15 19:27:40.556 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=38
+2025-05-15 19:27:42.551 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:27:42.581 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=30
+2025-05-15 19:27:42.639 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1747335150659} status=0 QTime=73
+2025-05-15 19:27:42.662 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:27:42.697 INFO  (qtp240630125-31) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=29
+2025-05-15 19:27:42.746 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1747335150659} status=0 QTime=78
+2025-05-15 19:27:45.760 INFO  (qtp240630125-50) [ x:restaurants] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.7.0
+2025-05-15 19:27:45.789 INFO  (qtp240630125-50) [ x:restaurants] o.a.s.s.IndexSchema Schema name=restaurants
+2025-05-15 19:27:45.812 INFO  (qtp240630125-50) [ x:restaurants] o.a.s.s.IndexSchema Loaded schema restaurants/1.6 with uniqueid field id
+2025-05-15 19:27:45.830 INFO  (qtp240630125-50) [ x:restaurants] o.a.s.c.CoreContainer Reloading SolrCore 'restaurants' using configuration from instancedir /var/solr/data/restaurants
+2025-05-15 19:27:46.036 INFO  (qtp240630125-50) [] o.a.s.c.SolrCore Opening new SolrCore at [/var/solr/data/restaurants], dataDir=[/var/solr/data/restaurants/data/]
+2025-05-15 19:27:46.210 INFO  (qtp240630125-50) [] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2025-05-15 19:27:46.210 INFO  (qtp240630125-50) [] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2025-05-15 19:27:46.240 INFO  (qtp240630125-50) [] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/restaurants/conf
+2025-05-15 19:27:46.242 INFO  (qtp240630125-50) [] o.a.s.s.DirectSolrSpellChecker init: {name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, accuracy=0.5, maxQueryFrequency=0.01}
+2025-05-15 19:27:46.245 INFO  (qtp240630125-50) [] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2025-05-15 19:27:46.264 INFO  (searcherExecutor-18-thread-1) [] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2025-05-15 19:27:46.265 INFO  (searcherExecutor-18-thread-1) [] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2025-05-15 19:27:46.306 INFO  (searcherExecutor-18-thread-1) [] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2025-05-15 19:27:46.346 INFO  (qtp240630125-50) [] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2025-05-15 19:27:46.561 INFO  (qtp240630125-50) [] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@4edd0beb restaurants
+2025-05-15 19:27:46.562 INFO  (qtp240630125-50) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.restaurants tag=SolrCore@4edd0beb
+2025-05-15 19:27:46.578 INFO  (searcherExecutor-18-thread-1) [] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2025-05-15 19:27:46.597 INFO  (searcherExecutor-18-thread-1) [] o.a.s.c.SolrCore Registered new searcher autowarm time: 16 ms
+2025-05-15 19:27:46.653 INFO  (qtp240630125-50) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=restaurants&action=RELOAD&wt=json&_=1747335150659} status=0 QTime=952
+2025-05-15 19:27:47.677 INFO  (qtp240630125-53) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1747335150659} status=0 QTime=0
+2025-05-15 19:27:47.705 INFO  (qtp240630125-30) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1747335150660} status=0 QTime=28
+2025-05-15 19:27:47.745 INFO  (qtp240630125-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1747335150659} status=0 QTime=68
+2025-05-15 19:29:08.572 INFO  (qtp240630125-33) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&wt=json} hits=12 status=0 QTime=5
+2025-05-15 19:30:33.520 INFO  (qtp240630125-62) [ x:restaurants] o.a.s.s.AbstractSpatialPrefixTreeFieldType location_rpt{class=org.apache.solr.schema.SpatialRecursivePrefixTreeFieldType,analyzer=org.apache.solr.schema.FieldType$DefaultAnalyzer,args={geo=true, maxDistErr=0.001, spatialContextFactory=JTS, distErrPct=0.025, distanceUnits=kilometers, class=solr.SpatialRecursivePrefixTreeFieldType}} strat: RecursivePrefixTreeStrategy(SPG:(GeohashPrefixTree(maxLevels:11,ctx:JtsSpatialContext{geo=true, calculator=Haversine, worldBounds=Rect(minX=-180.0,maxX=180.0,minY=-90.0,maxY=90.0)})),pruneLeafyBranches) maxLevels: 11
+2025-05-15 19:30:33.526 INFO  (qtp240630125-62) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=8
+2025-05-15 19:30:34.392 INFO  (qtp240630125-27) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=1
+2025-05-15 19:30:34.605 INFO  (qtp240630125-28) [ x:restaurants] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&fl=id,name,address,type,description,lat,lng,location,[explain],score&fq={!geofilt+sfield%3Dlocation+pt%3D40.7128,-74.006+d%3D50}&sort=geodist(location,40.7128,-74.006)+asc&wt=json} hits=0 status=0 QTime=2
+2025-05-15 19:34:33.598 INFO  (JettyShutdownThread) [] o.e.j.s.Server Stopped Server@2756c0a7{STOPPING}[10.0.15,sto=0]
+2025-05-15 19:34:33.608 INFO  (JettyShutdownThread) [] o.e.j.s.AbstractConnector Stopped ServerConnector@6b9ce1bf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2025-05-15 19:34:33.634 INFO  (JettyShutdownThread) [] o.a.s.c.CoreContainer Shutting down CoreContainer instance=778330045
+2025-05-15 19:34:33.640 INFO  (coreCloseExecutor-23-thread-1) [ x:restaurants] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@3d2e14e3 restaurants
+2025-05-15 19:34:33.641 INFO  (coreCloseExecutor-23-thread-1) [ x:restaurants] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.restaurants tag=SolrCore@3d2e14e3
+2025-05-15 19:34:33.725 INFO  (coreCloseExecutor-23-thread-1) [ x:restaurants] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2025-05-15 19:34:33.823 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2025-05-15 19:34:33.854 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2025-05-15 19:34:33.872 INFO  (JettyShutdownThread) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2025-05-15 19:34:33.898 INFO  (JettyShutdownThread) [] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@1a2e2935{solr-jetty-context.xml,/solr,null,STOPPED}{/opt/solr-9.3.0/server/solr-webapp/webapp}

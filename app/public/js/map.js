@@ -103,10 +103,11 @@ async function handleSearch(event) {
         alert('Please enter valid numbers for latitude, longitude, and radius');
         return;
     }
-    
+
     // Perform the search
     try {
         const results = await performSearch(latitude, longitude, radius);
+        console.log('>>> search returned:', results);
         updateMap(latitude, longitude, radius, results);
         updateResultsList(results);
     } catch (error) {
